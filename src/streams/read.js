@@ -9,8 +9,9 @@ const read = async () => {
   // I think next line should work but for some reason it doesn't
   readableStream.pipe(stdout);
 
-  readableStream.on("data", (data) => {
-    console.log(data);
+  readableStream.on("readable", () => {
+    const result = readableStream.read();
+    if (result) console.log(result);
   });
 };
 
