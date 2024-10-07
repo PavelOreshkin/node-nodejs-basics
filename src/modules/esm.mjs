@@ -16,7 +16,7 @@ const unknownObject = await (async () => {
     random > 0.5 ? `${__dirname}/files/a.json` : `${__dirname}/files/b.json`;
 
   try {
-    const data = await readFile(fileName, "utf-8");
+    const data = await readFile(fileName, "utf8");
     return JSON.parse(data);
   } catch (error) {
     throw error;
